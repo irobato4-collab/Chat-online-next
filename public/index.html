@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>PWA Chat</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="apple-touch-icon" href="/icon-192.png" />
+
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="top">
+    <h2>PWA Chat</h2>
+    <button id="settings">⚙️</button>
+  </header>
+
+  <div id="chat"></div>
+
+  <div id="inputArea">
+    <input id="input" placeholder="メッセージを入力…" />
+    <button id="send" disabled>送信</button>
+  </div>
+
+  <button id="notify">通知を有効化</button>
+
+  <!-- ユーザー設定モーダル -->
+  <div id="userModal" class="modal hidden">
+    <div class="modal-content">
+      <h3>ユーザー設定</h3>
+
+      <input id="userName" placeholder="名前（必須）" />
+
+      <input id="userIconText" placeholder="絵文字（🙂 など）" />
+
+      <label class="upload">
+        画像を選択
+        <input type="file" id="userIconFile" accept="image/*" hidden />
+      </label>
+
+      <div id="iconPreview"></div>
+
+      <button id="saveUser">保存</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

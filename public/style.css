@@ -1,0 +1,239 @@
+/* =====================
+   RESET
+===================== */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #222;
+  color: #eee;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Hiragino Kaku Gothic ProN",
+    "Noto Sans JP",
+    sans-serif;
+}
+
+/* =====================
+   HEADER
+===================== */
+header.top {
+  height: 52px;
+  background: linear-gradient(90deg, #00c853, #00bfa5);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+
+header.top h2 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#settings {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+}
+
+/* =====================
+   🔔 NOTIFY（強制固定）
+===================== */
+#notify {
+  position: fixed;          /* ← これが決定打 */
+  top: 9px;
+  right: 48px;
+  z-index: 50;
+
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+
+  border: none;
+  background: rgba(255,255,255,.18);
+  font-size: 0;
+}
+
+#notify::before {
+  content: "🔔";
+  font-size: 18px;
+  line-height: 34px;
+  display: block;
+  text-align: center;
+}
+
+#notify:not(.on) {
+  opacity: .4;
+}
+
+#notify.on {
+  background: rgba(0,255,160,.35);
+  box-shadow: 0 0 12px rgba(0,255,160,.7);
+}
+
+/* =====================
+   CHAT
+===================== */
+#chat {
+  height: calc(100vh - 52px - 60px);
+  padding: 14px;
+  overflow-y: auto;
+  background: #2a2a2a;
+}
+
+.bubble-wrap {
+  margin-bottom: 14px;
+}
+
+.name {
+  font-size: 11px;
+  color: #aaa;
+  margin-left: 44px;
+}
+
+.time {
+  font-size: 10px;
+  color: #888;
+  margin-left: 44px;
+}
+
+.bubble-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+.bubble {
+  padding: 10px 14px;
+  border-radius: 14px;
+  max-width: 70%;
+}
+
+.other .bubble {
+  background: #3a3a3a;
+  border-top-left-radius: 4px;
+}
+
+.me {
+  text-align: right;
+}
+
+.me .bubble-container {
+  justify-content: flex-end;
+}
+
+.me .bubble {
+  background: linear-gradient(135deg, #00e676, #69f0ae);
+  color: #0b3d2e;
+  border-top-right-radius: 4px;
+}
+
+/* =====================
+   INPUT
+===================== */
+#inputArea {
+  height: 60px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: #1c1c1c;
+}
+
+#input {
+  flex: 1;
+  background: #2c2c2c;
+  border: none;
+  border-radius: 18px;
+  padding: 10px 14px;
+  color: #eee;
+}
+
+#send {
+  border: none;
+  border-radius: 18px;
+  padding: 0 16px;
+  background: linear-gradient(135deg, #00c853, #00e676);
+}
+
+/* =====================
+   MODAL（再設定）
+===================== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 320px;
+  background: #2a2a2a;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.modal-content input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  background: #3a3a3a;
+  border: none;
+  border-radius: 6px;
+  color: #eee;
+}
+
+.upload {
+  display: block;
+  background: #444;
+  padding: 8px;
+  border-radius: 6px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#iconPreview {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#iconPreview img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+#saveUser {
+  width: 100%;
+  border: none;
+  border-radius: 18px;
+  padding: 10px;
+  background: linear-gradient(135deg, #00c853, #00e676);
+}
